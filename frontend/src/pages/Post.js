@@ -14,23 +14,26 @@ function Post() {
 
             try{
             console.log("Enviando req");
-            const response = await Axios.post(`https://post-dev-backend-production.up.railway.app/register`, data, {
-                headers: { 
-                "Content-Type": 'application/json', 
+            const response = await Axios.post(`https://post-dev-backend-production.up.railway.app/register`, 
+                {
+                    nome: nome,
+                    idade: idade
                 }
-            })
+            );
 
-            //ñ funciona 
-            if(response.status === 204){
-                console.log("Sucesso ao enviar req")
-                console.log(data)
-            } else{
-                console.log("Falha ao enviar req")
-            }
+            console.log("Status: ", response.status);
+            console.log("Response: ", response.data);
+            
+            if(response.status === 200){
+                console.log("Sucesso ao enviar req");
+                console.log(data);
+            }; 
         } catch(err){
-            console.error("Erro:", err);
-        }
-    }
+            if (err.response){
+                console.log("Erro na resposta: ", err.response.data);
+            }
+        };
+    };
 
   return (
     <div className='container'>
