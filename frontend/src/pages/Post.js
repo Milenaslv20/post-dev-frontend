@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './styles/post_styles.css'
+import './styles/post_styles.css'
 import  Axios from 'axios'
 
 function Post() {
@@ -14,7 +14,7 @@ function Post() {
 
             try{
             console.log("Enviando req");
-            const response = await Axios.post(`http://localhost:5000/register`, data, {
+            const response = await Axios.post(`https://post-dev-backend-production.up.railway.app/register`, data, {
                 headers: { 
                 "Content-Type": 'application/json', 
                 }
