@@ -1,0 +1,31 @@
+.container{
+    font-size: 25px;
+}
+
+.container_inputs{
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input{
+    display: flex;
+    justify-content: center;
+}
+
+.input input{
+    margin-left: 11px;
+    width: max-content;
+}
+
+#idade{
+    margin-right: 0;
+    float: right;
+}
+
+.button{
+    width: 30%;
+    font-size: 15px;
+}
