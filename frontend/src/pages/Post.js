@@ -62,7 +62,6 @@ function Post() {
         </div>
 
         <Modal openModal={openModal} setOpenModal={setOpenModal} message={message} statuscolor={statusColor} reload={true}/>
-        <button onClick={() => setOpenModal(true)}>Open Modal</button>
     </div>
   )
 }

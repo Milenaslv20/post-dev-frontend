@@ -13,11 +13,10 @@ function Modal({openModal, setOpenModal, message, reload, statuscolor}) {
 
     return (
         <div className='blur'>
-            <div className='container_modal'>
+            <div className='container_modal' id={statuscolor}>
                 <div className='status'>
                     <h1>{message}</h1>
-                    <h1>modal</h1>
-                    <button onClick={handleClose} className='close_button' id={statuscolor}>X</button>
+                    <button onClick={handleClose} className='close_button'>X</button>
                 </div>
             </div>
         </div>
