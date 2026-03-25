@@ -29,7 +29,7 @@ function Post() {
             console.log("Response: ", response.data);
             
             if(response.status === 200){
-                statusColor("sucess");
+                setStatusColor("sucess");
                 setMessage("Cadastro enviado com sucesso");
                 setOpenModal(true);
                 console.log("Sucesso ao enviar req");
@@ -37,7 +37,7 @@ function Post() {
             }; 
         } catch(err){
             if (err.response){
-                statusColor("error");
+                setStatusColor("error");
                 setMessage("Erro ao enviar cadastro, tente novamente");
                 setOpenModal(true);
                 console.log("Erro na resposta: ", err.response.data);
