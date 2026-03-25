@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './styles/post_styles.css'
-import Modal from '../components/Modal'
+import Modal from '../components/Modal.js'
 import  Axios from 'axios'
 
 function Post() {
