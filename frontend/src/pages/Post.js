@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import './styles/post_styles.css'
+import Modal from '../components/Modal'
 import  Axios from 'axios'
 
 function Post() {
 
     const [nome, setNome] = useState('')
     const [idade, setIdade] = useState('')
+    const [openModal, setOpenModal] = useState(false)
+    const [message, setMessage] = useState('')
+    const [statusColor, setStatusColor] = useState('')
 
     const register = async () =>{
         const data = new FormData();
@@ -25,11 +29,17 @@ function Post() {
             console.log("Response: ", response.data);
             
             if(response.status === 200){
+                statusColor("sucess");
+                setMessage("Cadastro enviado com sucesso");
+                setOpenModal(true);
                 console.log("Sucesso ao enviar req");
                 console.log(data);
             }; 
         } catch(err){
             if (err.response){
+                statusColor("error");
+                setMessage("Erro ao enviar cadastro, tente novamente");
+                setOpenModal(true);
                 console.log("Erro na resposta: ", err.response.data);
             }
         };
@@ -50,6 +60,9 @@ function Post() {
 
             <button type='submit' className='button' id='button' onClick={register}>Send</button>
         </div>
+
+        <Modal openModal={openModal} setOpenModal={setOpenModal} message={message} statuscolor={statusColor} reload={true}/>
+        <button onClick={() => setOpenModal(true)}>Open Modal</button>
     </div>
   )
 }
