@@ -1,4 +1,3 @@
-import React from 'react'
 import './styles/modal_styles.css'
 
 function Modal({openModal, setOpenModal, message, reload, statuscolor}) {
